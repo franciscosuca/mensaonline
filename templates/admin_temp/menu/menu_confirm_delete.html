@@ -1,0 +1,51 @@
+{% extends '../base.html' %}
+
+{% block head_title %}
+Are you Sure to Delete this Menu
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+    <div class="container">	
+
+        <div class="filters-content">
+            
+ 
+                <div class="col-md-12">						
+                    <div class="single-menu">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4">Delete Food Item</legend>
+                                    <h2>Are you sure you want to delete {{ object.title }}</h2>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-outline-danger" name="submit" value="Yes, Delete" />
+                                    <a class="btn btn-outline-secondary" href="{% url 'admin-menu' %}"/>Cancel</a>
+                                </div>
+                            </div>     
+                        </form>								
+                    </div>
+                </div>
+
+        						
+            
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block jquery %}
+//any changes
+{% endblock %}

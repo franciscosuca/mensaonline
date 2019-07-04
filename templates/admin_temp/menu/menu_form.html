@@ -1,0 +1,59 @@
+{% extends '../base.html' %}
+
+{%  load crispy_forms_tags %}
+
+{% block head_title %}
+Add Menu page
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Add/Update a Food in the Menu</h1>
+                </div>
+            </div>
+        </div>	
+
+        <div class="filters-content">
+            
+ 
+                <div class="col-md-12">						
+                    <div class="single-menu">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4">Add/Update Information</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-outline-info" name="submit" value="Submit" />
+                                </div>
+                            </div>     
+                        </form>								
+                    </div>
+                </div>
+
+        						
+            
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block jquery %}
+$('#id_day').datepicker({ uiLibrary: 'bootstrap4', iconsLibrary: 'materialicons' });
+{% endblock %}

@@ -1,0 +1,49 @@
+ 
+h1 { color:#CC9933;}
+h2{font-family:fantasy, sans-serif, cursive; color:#339966} 
+  
+h3{font-family:fantasy, sans-serif, cursive; color:#CC9933;}   
+
+
+  #googleMap {
+	position:absolute;
+	width: 366px;
+	height: 264px;
+	visibility: visible;
+	left: 301px;
+	top: 769px;
+      }
+
+
+#logo1{
+	height:45px;
+	width:101px;
+	position:absolute;
+	top: 118px;
+	left: 482px;
+	font-size:14px;
+	
+}
+
+
+#logo2{
+	height:43px;
+	width:108px;
+	position:absolute;
+	top: 187px;
+	left: 492px;
+	visibility: visible;
+	font-size:14px;
+	
+}
+
+
+
+/* Text Modification*/
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+}

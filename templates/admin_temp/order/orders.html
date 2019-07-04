@@ -1,0 +1,130 @@
+{% extends '../base.html' %}
+
+{% block head_title %}
+Manage Orders
+{% endblock %}
+
+{% block styles %}
+a.btn {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+.boxed {
+    padding: 3px;
+    border-radius: 5px;
+}
+.boxed.green {
+    color: white;
+    bgcolor: #FF0000;
+    width: 75px;
+}
+.boxed.red {
+    color: white;
+    bgcolor: red;
+    width: 103px;
+}
+.boxed.blue {
+    color: white;
+    width: 103px;
+    bgcolor: blue;
+}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Manage Your Orders</h1>
+                    </div>
+                </div>
+            </div>	
+       
+            <div class="filters-content">
+                <div class="row grid">   
+                    <div class="col-md-12 all">						
+                        <div class="section-top-border">
+                            <h3 class="mb-30">All Orders</h3>
+                            <div class="progress-table-wrap">
+                                <div class="progress-table">
+                                    <div class="table-head">
+                                        <div class="serial">#</div>
+                                        <div class="visit">Food Menu</div>
+                                        <div class="visit">Ordered By</div>
+                                        <div class="visit">Status</div>
+                                        <div class="visit">Order Time</div>
+                                        <div class="country">Action</div>
+                                    </div>
+                                    {% for order in object_list %}  
+                                    <div class="table-row">
+                                        <div class="serial">{{ order.id }}</div>
+                                        <div class="visit">
+                                            {% for item in order.menu.all %}
+                                               {{forloop.counter}}. {{ item.title }}<br>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="visit">{{ order.customer.user.username }}</div>
+                                        <div class="visit">{{ order.status }}</div>
+                                        <div class="visit">{{ order.timestamp }}</div>
+                                        <div class="country">
+                                            <form action="{% url 'orders:order-action' order.id %}" method="post">
+                                                {% csrf_token %}
+                                                {% if order.status == 'Pending' %}
+                                                <input type="submit" name="action" value="Approve" class="btn btn-primary btn-sm" />
+                                                <input type="submit" name="action" value="Cancel" class="btn btn-danger btn-sm" />
+                                                {% elif order.status == 'Aproved' %}
+                                                <input type="submit" name="action" value="Cancel" class="btn btn-danger btn-sm" />
+                                                {% endif %}
+                                                
+                                            </form>          
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                </div>
+                
+            </div>
+            <br /><br />
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+    
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+    
+                {% if page_obj.has_next %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+    
+            {% endif %}
+    
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block jquery %}
+//any changes
+{% endblock %}

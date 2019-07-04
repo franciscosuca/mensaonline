@@ -1,0 +1,150 @@
+{% extends '../base.html' %}
+
+{% block head_title %}
+Menu page
+{% endblock %}
+
+{% block styles %}
+a.btn {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+.boxed {
+    padding: 3px;
+    border-radius: 5px;
+}
+.boxed.green {
+    border: 2px solid green ;
+    width: 75px;
+}
+.boxed.red {
+    border: 2px solid red ;
+    width: 103px;
+}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">What kind of Foods we serve for you</h1>
+                </div>
+            </div>
+        </div>	
+
+        <ul class="filter-wrap filters col-lg-12 no-padding">
+            <li class="active" data-filter="*">All Menu</li>
+            <li data-filter=".Veg">Veg</li>
+            <li data-filter=".Non-Veg">Non-Veg</li>
+            <li data-filter=".Salads">Salads</li>
+            <li data-filter=".Desserts">Desserts</li>
+            <li data-filter=".Fruits">Fruits</li>	
+            <li data-filter=".Beverages">Beverages</li>	
+            <li data-filter=".Favorite">Favorite</li>						
+        </ul>
+   
+        <div class="filters-content">
+            <div class="row grid">
+
+                {% for menu in object_list %}     
+                <div class="col-md-6 all {{ menu.category }}">						
+                    <div class="single-menu">
+                        {% ifequal menu.status "Available" %}
+                        <div class="boxed green">
+                            <p>{{ menu.status }}</p>
+                        </div>
+                        {% else %}
+                        <div class="boxed red">
+                            <p>{{ menu.status }}</p>
+                        </div>
+                        {% endifequal %}
+                        
+                        <br>
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{ menu.title }}</h4>
+                            <h4 class="price">&euro; {{ menu.price_student }}</h4>
+                        </div>
+                        <p>
+                            {{ menu.get_description }}
+                        </p>	
+                        <br>
+                        <!-- <p>
+                            <b>Price for Students:</b> &euro; {{ menu.price_student }} (per plate)
+                        </p>
+                        <p>
+                            <b>Price for Guest:</b> &euro; {{ menu.price_guest }} (per plate)
+                        </p>
+                        <p>
+                            <b>Price for Attendants:</b> &euro; {{ menu.price_attendant }} (per plate)
+                        </p>	
+                        <br> -->
+                        <p>
+                            <b>Total Quantities: </b>{{menu.quantity}} plates.
+                        </p>
+                        <br>
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4 class="calorie">{{ menu.calories }} calories </h4>
+                            <p>(per plate)</p> 
+                        </div>
+                        <div class="title-wrap d-flex justify-content-between">
+                            <p><b>Date:</b> {{ menu.day }}</p> 
+                            <div>
+                                <a href="{% url 'menu-update' menu.id %}" class="btn btn-primary a-btn-slide-text">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                    <span><strong>Edit</strong></span>            
+                                </a>  
+                                <a href="{% url 'menu-delete' menu.id %}" onClick="return confirm('Delete This Menu?')" class="btn btn-danger a-btn-slide-text">
+                                    <span class="fa fa-remove" aria-hidden="true"></span>
+                                    <span><strong>Delete</strong></span>            
+                                </a>
+                                <!-- <a href="edit-menu.html" class="btn" bgcolor="Blue">  <i class="fa fa-edit"></i></a> </button>
+                                <button class="btn"><i class="fa fa-trash"></i> </button> -->
+                            </div>	
+                        </div>								
+                    </div>
+                </div>		
+                {% endfor %} 
+        						
+            </div>
+            
+        </div>
+        <br /><br />
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block jquery %}
+//any changes
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends '../base.html' %}
+
+{%  load crispy_forms_tags %}
+
+{% block head_title %}
+Your Profile
+{% endblock %}
+
+{% block styles %}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h2 style="text-align:center">User Profile</h2>
+
+                    <div class="card">
+                    <img src="{{ user.profile.image.url }}" alt="{{ user.username }}" style="width:100%;">
+                    <h1>{{ user.username }}</h1>
+                    <p class="title">{{ user.email }}</p>
+                    <!-- <p>Harvard University</p> -->
+                    <!-- <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a> 
+                        <a href="#"><i class="fa fa-twitter"></i></a>  
+                        <a href="#"><i class="fa fa-linkedin"></i></a>  
+                        <a href="#"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button>Contact</button></p> -->
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="col-md-12">
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Profile Info</legend>
+                                {{ u_form|crispy }}
+                                {{ p_form|crispy }}
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-outline-info" name="submit" value="Update" />
+                            </div>
+                        </div>     
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>	
+        
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block jquery %}
+//any changes
+{% endblock %}

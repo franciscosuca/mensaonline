@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Macro</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="css/linearicons.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">				
+        <link rel="stylesheet" href="css/nice-select.css">							
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">				
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>	
+        <header id="header">
+            <div class="header-top">
+                <div class="container">
+                      <div class="row justify-content-center">
+                          <div id="logo">
+                            <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                          </div>
+                      </div>			  					
+                </div>
+            </div>
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-center d-flex">			
+                    <nav id="nav-menu-container">
+                  
+                        <ul class="nav-menu">
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="login.html">Login</a></li>
+                          <li><a href="signup.html">Signup</a></li>
+                          <li><a href="menu.html">Menu</a></li>
+						  <li><a href="preorder.html">Pre-Order</a></li>
+                         <li><a href="#wallet">Wallet</a>
+						  			<ul>
+								<li><a href="balance.html">Balance Check</a></li>								
+								<li><a href="recharge.html">Recharge</a></li>
+								<li><a href="pay.html">Payment Method</a>
+									
+								</li>
+                                    </ul>
+								</li>
+                          			
+                                <li><a href="#settings">Settings</a>
+						  			<ul>
+								<li><a href="personalinfo.html">Personal Info</a></li>								
+								<li><a href="notifications.html">Notifications</a></li>
+								<li><a href="language.html">Language</a></li>
+									<li><a href="logout.html">Log Out</a>
+								</li>
+                                    </ul>
+								</li>						  
+                          
+                        </ul>
+                      </nav><!-- #nav-menu-container -->					      		  
+                </div>
+            </div>
+        </header><!-- #header -->
+		
+ <!-- start banner Area -->
+        <section class="about-banner relative">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">				
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                        
+                    </div>	
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+		
+	<!--main-->
+	 <section class="menu-area section-gap" id="menu">
+                <div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Select Payment Method</h1>
+							</div>
+						</div>
+					</div>	
+
+                    <ul class="filter-wrap filters col-lg-12 no-padding">
+                        
+                        <li  data-filter=".credit">Credit-Card</li>
+                        <li data-filter=".debit">Debit-Card</li>
+						<li data-filter=".paypal">Paypal</li>
+                        <li data-filter=".giftcard">GiftCard</li>
+                    </ul>
+                    
+					 <div >
+                <div class="row grid">
+				 
+				
+					 <div class="col-md-6 all credit">
+								<div class="payment-info">
+											<h3>Personal Information</h3>
+											<form>
+												<div class="tab-for">				
+													<h5>EMAIL ADDRESS</h5>
+														<input type="text" value="">
+													<h5>FIRST NAME</h5>													
+														<input type="text" value="">
+												</div>			
+											</form>
+											<h3 class="pay-title">Credit Card Info</h3>
+											<form>
+												<div class="tab-for">				
+													<h5>NAME ON CARD</h5>
+														<input type="text" value="">
+													<h5>CARD NUMBER</h5>													
+														<input class="pay-logo" type="text" value="0000-0000-0000-0000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '0000-0000-0000-0000';}" required="">
+												</div>	
+												<div class="transaction">
+													<div class="tab-form-left user-form">
+														<h5>EXPIRATION</h5>
+															<ul>
+																<li>
+																	<input type="number" class="text_box" type="text" value="6" min="1" />	
+																</li>
+																<li>
+																	<input type="number" class="text_box" type="text" value="1988" min="1" />	
+																</li>
+																
+															</ul>
+													</div>
+													<div class="tab-form-right user-form-rt">
+														<h5>CVV NUMBER</h5>													
+														<input type="text" value="xxxx" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'xxxx';}" required="">
+													</div>
+													<div class="clear"></div>
+												</div>
+												<input type="submit" value="SUBMIT">
+											</form>
+											<div class="single-bottom">
+													<ul>
+														<li>
+															<input type="checkbox"  id="brand" value="">
+															<label for="brand"><span></span>By checking this box, I agree to the Terms & Conditions & Privacy Policy.</label>
+														</li>
+													</ul>
+											</div>
+										</div>				                               
+                            </div> 
+				    
+					
+                     
+                            <div class="col-md-6 all debit">						
+								
+									<div class="payment-info">
+											
+											<h3 class="pay-title">Dedit Card Info</h3>
+											<form>
+												<div class="tab-for">				
+													<h5>NAME ON CARD</h5>
+														<input type="text" value="">
+													<h5>CARD NUMBER</h5>													
+														<input class="pay-logo" type="text" value="0000-0000-0000-0000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '0000-0000-0000-0000';}" required="">
+												</div>	
+												<div class="transaction">
+													<div class="tab-form-left user-form">
+														<h5>EXPIRATION</h5>
+															<ul>
+																<li>
+																	<input type="number" class="text_box" type="text" value="6" min="1" />	
+																</li>
+																<li>
+																	<input type="number" class="text_box" type="text" value="1988" min="1" />	
+																</li>
+																
+															</ul>
+													</div>
+													<div class="tab-form-right user-form-rt">
+														<h5>CVV NUMBER</h5>													
+														<input type="text" value="xxxx" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'xxxx';}" required="">
+													</div>
+													<div class="clear"></div>
+												</div>
+												<input type="submit" value="SUBMIT">
+											</form>
+											<div class="single-bottom">
+													<ul>
+														<li>
+															<input type="checkbox"  id="brand" value="">
+															<label for="brand"><span></span>By checking this box, I agree to the Terms & Conditions & Privacy Policy.</label>
+														</li>
+													</ul>
+											</div>
+										</div>	
+								
+                            </div>		
+
+                            <div class="col-md-6 all paypal">
+								<div class="payment-info">
+											
+											<h4>Already Have A PayPal Account?</h4>
+											<div class="login-tab">
+												<div class="user-login">
+													<h5>Login</h5>
+													
+													<form>
+														<input type="text" value="name@email.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'name@email.com';}" required="">
+														<input type="password" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}" required="">
+															<div class="user-grids">
+																<div class="user-left">
+																	<div class="single-bottom">
+																			<ul>
+																				<li>
+																					<input type="checkbox"  id="brand1" value="">
+																					<label for="brand1"><span></span>Remember me?</label>
+																				</li>
+																			</ul>
+																	</div>
+																</div>
+																<div class="user-right">
+																	<input type="submit" value="LOGIN">
+																</div>
+																<div class="clear"></div>
+															</div>
+													</form>
+												</div>
+											</div>
+										</div>
+								
+								
+                            </div>		
+							
+							<div class="col-md-6 all giftcard">
+							<div class="payment-info">
+											
+											<button style="color:red;">check you won any card</button>
+											
+										</div>	
+								
+                            </div>
+							
+                            
+                    </div>
+                    
+                </div>
+            </section>
+	<!--end main-->
+		
+		
+
+	<!-- start footer Area -->		
+			<footer class="footer-area">
+				<div class="footer-widget-wrap">
+					<div class="container">
+						<div class="row section-gap">
+							<div class="col-lg-4  col-md-6 col-sm-6">
+								<div class="single-footer-widget">
+									<h4>Opening Hours</h4>
+									<ul class="hr-list">
+										<li class="d-flex justify-content-between">
+											<span>Monday - Friday</span> <span>09.00 am - 3.00 pm</span>
+										</li>
+										
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4  col-md-6 col-sm-6">
+							</div>
+							<div class="col-lg-4  col-md-6 col-sm-6">
+								<div class="single-footer-widget">
+									<h4>Contact Us</h4>
+									<p>
+										47475, Kamp-Lintfort
+										Germany
+									</p>
+									<p class="number">
+										012-6532-568-9746 <br>
+										012-6532-569-9748
+									</p>
+								</div>
+							</div>						
+											
+						</div>					
+					</div>					
+				</div>
+				<div class="footer-bottom-wrap">
+					<div class="container">
+						<div class="row footer-bottom d-flex justify-content-between align-items-center">
+							<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">HSRW Students</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+							<ul class="col-lg-4 col-mdcol-sm-6 -6 social-icons text-right">
+	                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+	                        </ul>
+						</div>						
+					</div>
+				</div>
+			</footer>
+			<!-- End footer Area -->	
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+ 			<script src="js/jquery-ui.js"></script>					
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>						
+			<script src="js/jquery.nice-select.min.js"></script>					
+			<script src="js/owl.carousel.min.js"></script>			
+            <script src="js/isotope.pkgd.min.js"></script>								
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html>

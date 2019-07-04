@@ -1,0 +1,94 @@
+<div class="container main-menu">
+    <div class="row align-items-center justify-content-center d-flex">			
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+        
+        
+          <li><a href="{% url 'admin-menu' %}">Food Menu</a>
+                        
+                        
+                        <ul>
+                    
+                <div class="row align-items-center justify-content-center d-flex">			
+      <nav id="nav-menu-container">
+      
+                <li><a href="{% url 'admin-menu' %}"> View Current Menu</a></li>
+                
+                
+                </div>
+    
+                  </ul>
+              </li>
+              
+              
+                            
+          
+          <li><a href="{% url 'orders:admin-orders' %}">Orders</a>
+          
+                      <ul>
+                    
+                <div class="row align-items-center justify-content-center d-flex">			
+      <nav id="nav-menu-container">
+                
+                <li><a href="{% url 'orders:admin-orders' %}"> Manage Orders</a></li>
+
+                </li>
+                
+                </div>
+    
+                  </ul>
+              </li>
+              
+          
+          <li><a href="menu.html">Invoices</a>
+          
+          <ul>
+              <li><a href="{% url 'invoices:admin-invoices' %}">Invoice History</a></li>
+             
+              <li><a href="blog-single.html">Report Generator</a>
+                  <ul>
+            
+                
+                <div class="row align-items-center justify-content-center d-flex">			
+      <nav id="nav-menu-container">
+      
+                <li><a href="blog-single.html"> Daily</a></li>
+                <li><a href="blog-single.html"> Weekly</a></li>
+                <li><a href="blog-single.html"> Monthly</a></li>
+                <li><a href="blog-single.html"> Customize</a></li>
+                
+                
+                </div>
+    
+                  </ul>
+              </li>
+          </ul>
+          
+          
+          </li>
+          
+          
+          <li><a href="gallery.html">Profile Management</a>
+          
+          <ul>
+              <li><a href="{% url 'customers:admin-customers' %}">Customer Management</a></li>
+              <li><a href="#">Admin Management</a></li>
+          </ul>
+          
+          
+          </li>
+          
+          
+          <li class="menu-has-children"><a href="">Settings</a>
+            <ul>
+              <li><a href="{% url 'profile' %}">Personal Information</a></li>
+              <li><a href="blog-single.html">Notifications</a></li>
+              <li><a href="blog-single.html">Language</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>	
+        
+        </ul>
+      </nav><!-- #nav-menu-container -->					      		  
+    </div>
+</div>

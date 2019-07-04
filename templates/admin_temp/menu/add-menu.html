@@ -1,0 +1,67 @@
+{% extends '../base.html' %}
+
+{% block head_title %}
+Add Menu page
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-area section-gap" id="menu">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">What kind of Foods we serve for you</h1>
+                </div>
+            </div>
+        </div>	
+
+       
+   
+        <div class="filters-content">
+            <div class="row grid">
+ 
+                <div class="col-md-6">						
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4></h4>
+                            <h4 class="price">&euro;</h4>
+                        </div>	
+                        <br>
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4 class="calorie"> calories </h4>
+                            <p>(per plate)</p> 
+                        </div>
+                        <div class="title-wrap d-flex justify-content-between">
+                            <p><b>Date:</b> {{ menu.day }}</p> 
+                            <div>
+                                <a href="#" class="btn btn-primary a-btn-slide-text">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                    <span><strong>Edit</strong></span>            
+                                </a>  
+                                <a href="#" class="btn btn-danger a-btn-slide-text">
+                                    <span class="fa fa-remove" aria-hidden="true"></span>
+                                    <span><strong>Delete</strong></span>            
+                                </a>
+                            </div>	
+                        </div>								
+                    </div>
+                </div>
+
+        						
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block jquery %}
+//any changes
+{% endblock %}

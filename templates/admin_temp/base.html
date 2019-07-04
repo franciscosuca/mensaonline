@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="{% static 'img/fav.png' %}">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib"> 
+		<!-- Meta Description -->
+		<meta name="description" content=""> 
+		<!-- Meta Keyword -->
+		<meta name="keywords" content=""> 
+		<!-- meta character set -->
+		<meta charset="UTF-8"> 
+		<!-- Site Title -->
+		<title>Mensa-Online {% block head_title %}{% endblock %}</title> 
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">				
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">							
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">				
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <style>
+            {% block styles %}
+            {% endblock %}
+        </style>
+	</head>
+	<body>
+
+        <!-- #start header with navbar -->
+        {% include './common/header.html' %}
+        <!-- #End header with navbar -->
+
+        <!-- #start banner Area -->
+        {% include './common/banner.html' %}
+        <!-- #End banner Area -->			
+        
+        {% if messages %}
+           {% for message in messages %}
+               <div class="alert alert-{{ message.tag }}">
+                   {{ message }}
+               </div>
+           {% endfor %}
+        {% endif %}
+
+        <!-- #Start main content Area -->
+        {% block content %}
+
+        {% endblock %}
+        <!-- #End main content Area -->						
+
+        <!-- #start footer Area -->		
+        {% include './common/footer.html' %}
+        <!-- #End footer Area -->	
+
+        <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+        <script src="{% static 'js/jquery-ui.js' %}"></script>					
+        <script src="{% static 'js/easing.min.js' %}"></script>			
+        <script src="{% static 'js/hoverIntent.js' %}"></script>
+        <script src="{% static 'js/superfish.min.js' %}"></script>	
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>						
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>					
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>			
+        <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>								
+        <script src="{% static 'js/mail-script.js' %}"></script>	
+        <script src="{% static 'js/main.js' %}"></script>	
+        
+        <script>
+           {% block jquery %}
+           {% endblock %}
+        </script>
+    </body>
+            
+    </html>
