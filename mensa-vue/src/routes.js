@@ -1,4 +1,4 @@
-// D1. Import the component from the user-components folder.
+// Import the component from the user-components folder.
 
 import menu from './user-components/menu.vue'
 import index from './user-components/index.vue'
@@ -14,9 +14,7 @@ import about from './user-components/about.vue'
 import wallet from './user-components/wallet.vue'
 
 const routes = [
-    // D2. Create the path object which will be used to call the component
-
-    // New routes
+    // Create the path object which will be used to call the component
 
     {
         path: '/',
@@ -29,7 +27,6 @@ const routes = [
                 path:'index',
                 component: index,
                 default:true,
-                // Use lazyloading to import the components from folders
             },
             {
                 name:'menu',

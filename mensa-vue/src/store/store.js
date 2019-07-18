@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import api from '../user-components/api/index';
 
 Vue.use(Vuex);
 
@@ -10,17 +9,11 @@ export const store = new Vuex.Store({
         orders:[],
         order_total:0,
         balance:'',
-        
     },
     getters:{
         countOrders: state => {
 			return state.orders.length
-        },  
-        // Under construction
-        checkBalance: state => {
-            // return state.balance
-            // return Vue.set(state.balance);
-        }      
+        },       
     },
     mutations:{
         cleanOrders: state => {
@@ -38,6 +31,7 @@ export const store = new Vuex.Store({
             Vue.set(state.order, 'calories', payload.calories);
             Vue.set(state.order, 'qty', 1);
             state.orders.push({...state.order});
+            console.log(state.orders)
         },
     },
     actions:{

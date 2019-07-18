@@ -1,12 +1,10 @@
 <template>
-
     <div>
-    <cheader></cheader>
-    <cbanner></cbanner>
-    <router-view></router-view>
-    <cfooter></cfooter>
+        <cheader></cheader>
+        <cbanner></cbanner>
+        <router-view></router-view>
+        <cfooter></cfooter>
     </div>
-    	
 </template>
 
 <script>
@@ -25,5 +23,4 @@ export default {
 </script>
 
 <style>
-
 </style>
