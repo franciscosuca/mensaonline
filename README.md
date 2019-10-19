@@ -11,7 +11,7 @@ Version 1 - This version runs both servers locally. Follow the following instruc
 
 Click in the following link to see the documentation (Project report).
 
-http://fasc.info/projects3b
+http://fasc.info/project-3b
 
 ### Steps setup the project to work on your computer
 
