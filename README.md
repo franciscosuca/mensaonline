@@ -2,6 +2,7 @@
 
 Mensa Online is a web-based service for “Mensa Restaurant” based in Kamp-Lintfort target towards Hochschule RheinWaal University. This system is designed to be compatible with all the available mobile devices to provide service facility to restaurant and the customers as well. The service that is provided through our web-application for user is being able to view menu, pre-ordering, checking wallet, making payment, recharging wallet and redeeming cards. The Administrator of the restaurant can manage order, manage menu, manage invoice and account of user and generate report as well. In this project, we have targeted shortcomings of the similar applications for different universities and based on our research, we have developed an alternative system with new features. This project is developed using HTML/CSS, Vue.js JavaScript, PostgreSQL and Django Framework.
 
+<<<<<<< HEAD
 ## Prerequisites
 
 Ensure that you have met the following requirements:
@@ -11,10 +12,30 @@ Ensure that you have met the following requirements:
 * You have **django** installed in yout machine. Otherwise, click [here](https://www.djangoproject.com/download/) to download it.
 
 ## Installation
+=======
+### Architecture
+
+Version 1 - This version runs both servers locally. Follow the following instructions to run the project in your computer.
+
+### Final Report
+
+Click in the following link to see the documentation (Project report).
+
+http://fasc.info/project-3b
+
+### Steps setup the project to work on your computer
+>>>>>>> 9948d3be6f281a38559eb342ec16c4526dabf311
 
 This version runs both servers locally. Follow the instructions below to run the project in your computer.
 
+<<<<<<< HEAD
 **Run vue js project**
+=======
+- You have django already installed 
+- You have nodejs already installed
+
+#### Run vue js project
+>>>>>>> 9948d3be6f281a38559eb342ec16c4526dabf311
 
 A. Go to mensa-online>mensa-vue, and run the following command:
 
@@ -28,7 +49,11 @@ C. Run the Vue project:
 
 > npm run dev
 
+<<<<<<< HEAD
 **Run django project**
+=======
+#### Run django project
+>>>>>>> 9948d3be6f281a38559eb342ec16c4526dabf311
 
 A. Install django-webpack-loader:
 
